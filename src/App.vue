@@ -1,27 +1,12 @@
 <template>
   <v-app>
     <v-main>
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/product">product</router-link>
-      </div>
+      <menu-bar></menu-bar>
       <router-view />
     </v-main>
   </v-app>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-
-  components: {
-    HelloWorld,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+<script setup>
+import MenuBar from './components/MenuBar.vue';
 </script>
