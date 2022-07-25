@@ -11,12 +11,12 @@
       <br />
 
     </div> -->
-  
+
     <v-row no-gutters>
       <v-col cols="12">
         <v-row no-gutters class="tw-py-4 tw-text-sm tw-text-gray-400 tw-font-light">
-          <router-link to="/">HOMEPAGE /</router-link> 
-          <a class="tw-text-black tw-ml-1">ALL PRODUCT </a>
+          <router-link to="/">HOMEPAGE /</router-link>
+          <a class="tw-text-black tw-ml-1 tw-uppercase">eyeglasses </a>
         </v-row>
       </v-col>
       <v-col cols="12">
@@ -74,91 +74,52 @@
             >  
           </div>
         </v-row>
-        <v-row 
-          no-gutters 
-        >
-          <v-col cols="4"
-            v-for="(item, index) in showProducts" :key="item"
-            class="
+        <v-row no-gutters>
+          <v-col cols="4" v-for="(item, index) in showProducts" :key="item" class="
             tw-mb-1
-            "
-          >
-          <!-- <v-col cols="4"
-            v-for="item in store.products"
-            :key="item.name"
-            class="
-            tw-mb-4
-            "
-          > -->
-          <!-- แก้ป็น v hover -->
-            <v-hover
-            v-slot="{ isHovering, props }"
-            open-delay="100"
-          >
-            <div
-              class="description
+            ">
+            <!-- แก้ป็น v hover -->
+            <v-hover v-slot="{ isHovering, props }" open-delay="100">
+              <div class="description
               tw-mx-4
               tw-my-0
               tw-px-2
               tw-py-2
-              "
-              :class="{ 'on-hover': isHovering }"
-              v-bind="props"
-            >
-              <v-row no-gutters>
-                <v-carousel 
-                  height="200"
-                  hide-delimiters
-                  show-arrows-on-hover
-                >
-                  <v-carousel-item
-                    v-for="(item, i) in item.image"
-                    :key="i"
-                    :src="item"
-                  ></v-carousel-item>
-                </v-carousel>
-              </v-row>
-              
-              <v-row no-gutters 
-                align="center"
-                justify="center"
-                class="
+              " :class="{ 'on-hover': isHovering }" v-bind="props">
+                <v-row no-gutters>
+                  <v-carousel height="200" hide-delimiters show-arrows-on-hover>
+                    <v-carousel-item v-for="(item, i) in item.image" :key="i" :src="item"></v-carousel-item>
+                  </v-carousel>
+                </v-row>
+
+                <v-row no-gutters align="center" justify="center" class="
                   tw-font-medium
                   tw-text-lg
                   tw-pb-0
                   tw-tracking-wider
-                "
-              >
-                {{ item.name }}
-              </v-row>
-              <v-row no-gutters
-                align="center"
-                justify="center"
-                class="
+                ">
+                  {{ item.name }}
+                </v-row>
+                <v-row no-gutters align="center" justify="center" class="
                   tw-pb-0
                   tw-tracking-wide
-                "
-              >
-                ฿{{ item.price }}
-                <!-- ฿{{ eachItem.price }} -->
-                <!-- {{ item.price | toCurrency }} -->
-                <!-- {{ invoice.fees | toCurrency }} -->
-              </v-row>
-              <v-row no-gutters
-                align="center"
-                justify="center"
-                class="
+                ">
+                  ฿{{ item.price }}
+                  <!-- ฿{{ eachItem.price }} -->
+                  <!-- {{ item.price | toCurrency }} -->
+                  <!-- {{ invoice.fees | toCurrency }} -->
+                </v-row>
+                <v-row no-gutters align="center" justify="center" class="
                   stock
                   tw-pb-1.5
                   tw-text-gray-500
                   tw-text-sm
                   tw-tracking-wide
-                "
-              >
-                stock: {{ item.each }}
-              </v-row>
-              <!-- stock -->
-              <!-- <v-row no-gutters
+                ">
+                  stock: {{ item.each }}
+                </v-row>
+                <!-- stock -->
+                <!-- <v-row no-gutters
                 v-show="upHere"
                 align="center"
                 justify="center"
@@ -170,8 +131,8 @@
               >
                 stock: {{ item.each }}
               </v-row> -->
-              <v-row no-gutters>
-                <!-- <button
+                <v-row no-gutters>
+                  <!-- <button
                   v-show="upHere"
                   @click="store.pushData({ name: eachItem.name , price: eachItem.price,  each: 1 })"
                   type="button"
@@ -182,27 +143,26 @@
                     tw-rounded
                   "
                 > -->
-                <!-- <v-btn @click="store.addCart(item)" color="red"> Cart{{ item.name }}</v-btn> -->
-                <!-- <v-btn @click="store.addCart({ name: item.name, price: item.price, each: 1 })" color="red"> Cart</v-btn> -->
-                <!-- {{ item }} -->
-              
-                <v-btn
-                  @click="addedCart(item, index)"
-                  :disabled="item.each<=0"
-                  type="button"
-                  block
-                  rounded-lg
-                  text="white"
-                  class="
-                  block"
-                > 
-                  <span v-if="item.addCarts==false">
-                    ADD TO BAG
-                  </span>
-                  <span v-if="item.addCarts==true">
-                    ADDED
-                  </span>
-                </v-btn>
+                  <!-- <v-btn @click="store.addCart(item)" color="red"> Cart{{ item.name }}</v-btn> -->
+                  <!-- <v-btn @click="store.addCart({ name: item.name, price: item.price, each: 1 })" color="red"> Cart</v-btn> -->
+                  <!-- {{ item }} -->
+                  <v-btn
+                    @click="addedCart(item, index)"
+                    :disabled="item.each<=0"
+                    type="button"
+                    block
+                    rounded-lg
+                    text="white"
+                    class="
+                    block"
+                  > 
+                    <span v-if="item.addCarts==false">
+                      ADD TO BAG
+                    </span>
+                    <span v-if="item.addCarts==true">
+                      ADDED
+                    </span>
+                  </v-btn>
 
                   <!-- {{ textButton }} -->
 
@@ -210,28 +170,20 @@
                   >
                     {{ textButton }}
                   </span> -->
-                  
+
                   <!-- <span v-for="textButton in textButtons" :key="textButton">
                     {{ textButton[i] }}
                   </span> -->
-                  
-                
-              </v-row>
-            </div>
+
+
+                </v-row>
+              </div>
             </v-hover>
           </v-col>
         </v-row>
       </v-col>
 
-      <!-- <v-col cols="12">
-        <div class="text-center">
-          <v-pagination
-            v-model="page"
-            :length="4"
-            circle
-          ></v-pagination>
-        </div>
-      </v-col> -->
+      
     </v-row>
   </v-container>
 </template>
@@ -242,17 +194,47 @@ const store = useProductStore();
 console.log(store.products);
 </script> -->
 
+<!-- <script>
+  import {
+    useProductStore
+  } from "@/stores/products";
+
+  export default {
+    setup() {
+      const store = useProductStore();
+      const storeFilterEyeglasses = store.filterByCategory("eyeglasses")
+      return {
+        store,
+        storeFilterEyeglasses
+      };
+    },
+    data() {
+      return {
+
+        upHere: false,
+
+        textButton: ["ADD TO CART", "ADDED"],
+
+        page: 1,
+      }
+    },
+
+  };
+</script> -->
 <script setup>
 import { ref } from 'vue';
 import { useProductStore } from "@/stores/products";
 
 const store = useProductStore();
-const upHere = ref(false)
+const storeFilterEyeglasses = store.filterByCategory("eyeglasses")
+ 
+const page = 1;
+
 const msg = ref('')
-const showProducts = ref(store.products)
+const showProducts = ref(storeFilterEyeglasses)
 
 const filterByName = () => {
-  showProducts.value = store.products
+  showProducts.value = storeFilterEyeglasses
   // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
     // console.log(msg.value.toUpperCase())
@@ -266,59 +248,49 @@ const addedCart = (item, index) => {
   store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
   store.update(item.name, index)
 }
-
-// export default {
-//   setup() {
-//     const store = useProductStore();
-//     return { store };
-//   },
-//   data () {
-//     return {
       
-//       upHere : false,
-
-//       textButton:  ["ADD TO CART", "ADDED"] ,
-
-//       page: 1,
-//     }
-//   },
-// };
 </script>
 
 <style lang="scss" scoped>
-.description {
-  background-color: rgb(255, 255, 255);
-  transition-duration: 0.25s;
-}
-.description.active,
-.description:hover{
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-}
-.block {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #afad73;
-  padding: 10px 0px;
-  cursor: pointer;
-  text-align: center;
-  opacity: 0;
-  transition-duration: 0.25s;
-  color: white;
-}
-.block:hover {
-  background-color: #979661;
-}
-.on-hover {
+  .description {
+    background-color: rgb(255, 255, 255);
+    transition-duration: 0.25s;
+  }
+
+  .description.active,
+  .description:hover {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
   .block {
-    opacity: 1;
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #afad73;
+    padding: 10px 0px;
+    cursor: pointer;
+    text-align: center;
+    opacity: 0;
+    transition-duration: 0.25s;
+    color: white;
   }
+
+  .block:hover {
+    background-color: #979661;
+  }
+
+  .on-hover {
+    .block {
+      opacity: 1;
+    }
+
+    .stock {
+      opacity: 1;
+    }
+  }
+
   .stock {
-    opacity: 1;
+    opacity: 0;
+    transition-duration: 0.25s;
   }
- }
-.stock {
-  opacity: 0;
-  transition-duration: 0.25s;
- }
 </style>

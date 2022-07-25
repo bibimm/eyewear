@@ -16,7 +16,7 @@
       <v-col cols="12">
         <v-row no-gutters class="tw-py-4 tw-text-sm tw-text-gray-400 tw-font-light">
           <router-link to="/">HOMEPAGE /</router-link> 
-          <a class="tw-text-black tw-ml-1">ALL PRODUCT </a>
+          <a class="tw-text-black tw-ml-1 tw-uppercase">sunglasses </a>
         </v-row>
       </v-col>
       <v-col cols="12">
@@ -78,23 +78,17 @@
           no-gutters 
         >
           <v-col cols="4"
-            v-for="(item, index) in showProducts" :key="item"
+            v-for="(item, index) in showProducts"
+            :key="item"
             class="
             tw-mb-1
             "
           >
-          <!-- <v-col cols="4"
-            v-for="item in store.products"
-            :key="item.name"
-            class="
-            tw-mb-4
-            "
-          > -->
           <!-- แก้ป็น v hover -->
             <v-hover
             v-slot="{ isHovering, props }"
             open-delay="100"
-          >
+            >
             <div
               class="description
               tw-mx-4
@@ -157,19 +151,6 @@
               >
                 stock: {{ item.each }}
               </v-row>
-              <!-- stock -->
-              <!-- <v-row no-gutters
-                v-show="upHere"
-                align="center"
-                justify="center"
-                class="
-                  tw-pb-3
-                  tw-text-gray-500
-                  tw-text-sm
-                "
-              >
-                stock: {{ item.each }}
-              </v-row> -->
               <v-row no-gutters>
                 <!-- <button
                   v-show="upHere"
@@ -185,24 +166,23 @@
                 <!-- <v-btn @click="store.addCart(item)" color="red"> Cart{{ item.name }}</v-btn> -->
                 <!-- <v-btn @click="store.addCart({ name: item.name, price: item.price, each: 1 })" color="red"> Cart</v-btn> -->
                 <!-- {{ item }} -->
-              
                 <v-btn
-                  @click="addedCart(item, index)"
-                  :disabled="item.each<=0"
-                  type="button"
-                  block
-                  rounded-lg
-                  text="white"
-                  class="
-                  block"
-                > 
-                  <span v-if="item.addCarts==false">
-                    ADD TO BAG
-                  </span>
-                  <span v-if="item.addCarts==true">
-                    ADDED
-                  </span>
-                </v-btn>
+                    @click="addedCart(item, index)"
+                    :disabled="item.each<=0"
+                    type="button"
+                    block
+                    rounded-lg
+                    text="white"
+                    class="
+                    block"
+                  > 
+                    <span v-if="item.addCarts==false">
+                      ADD TO BAG
+                    </span>
+                    <span v-if="item.addCarts==true">
+                      ADDED
+                    </span>
+                  </v-btn>
 
                   <!-- {{ textButton }} -->
 
@@ -223,15 +203,7 @@
         </v-row>
       </v-col>
 
-      <!-- <v-col cols="12">
-        <div class="text-center">
-          <v-pagination
-            v-model="page"
-            :length="4"
-            circle
-          ></v-pagination>
-        </div>
-      </v-col> -->
+      
     </v-row>
   </v-container>
 </template>
@@ -247,12 +219,15 @@ import { ref } from 'vue';
 import { useProductStore } from "@/stores/products";
 
 const store = useProductStore();
-const upHere = ref(false)
+const storeFilterSunglasses = store.filterByCategory("sunglasses")
+ 
+const page = 1;
+
 const msg = ref('')
-const showProducts = ref(store.products)
+const showProducts = ref(storeFilterSunglasses)
 
 const filterByName = () => {
-  showProducts.value = store.products
+  showProducts.value = storeFilterSunglasses
   // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
     // console.log(msg.value.toUpperCase())
@@ -266,23 +241,7 @@ const addedCart = (item, index) => {
   store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
   store.update(item.name, index)
 }
-
-// export default {
-//   setup() {
-//     const store = useProductStore();
-//     return { store };
-//   },
-//   data () {
-//     return {
       
-//       upHere : false,
-
-//       textButton:  ["ADD TO CART", "ADDED"] ,
-
-//       page: 1,
-//     }
-//   },
-// };
 </script>
 
 <style lang="scss" scoped>

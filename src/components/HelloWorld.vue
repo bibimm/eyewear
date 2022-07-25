@@ -1,5 +1,5 @@
 <template>
-  <span class="h1"> Coutner : {{ store.counter }}</span>
+  <span class="h1"> Counter : {{ store.counter }}</span>
   <br />
   <span class="h1"> Number : {{ store.number }}</span>
   <br />
