@@ -524,7 +524,7 @@
                   >
                     <v-img
                       :width="20"
-                      src="src/assets/exit.png"
+                      src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607748905095229/exit.png"
                     >
                     </v-img>
                   </button>
@@ -564,7 +564,7 @@
         >
           <v-img
             :width="100"
-            src="src/assets/bin2.png"
+            src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607748494049430/bin2.png"
           >
           </v-img>
         </div>

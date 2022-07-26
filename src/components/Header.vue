@@ -321,7 +321,7 @@
                     <router-link to="inventory">
                       <div class="d-flex justify-end align-center tw-pl-5">
                         <v-img
-                          src="src/assets/account.png"
+                          src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607746870857779/account.png"
                           :width="20"
                         >
                         </v-img>
@@ -354,7 +354,7 @@
                       >
                         <v-img
                           :width="24"
-                          src="src/assets/bag.png"
+                          src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607748162682900/bag.png"
                         >
                         </v-img>
                         <span class="

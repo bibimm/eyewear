@@ -133,7 +133,7 @@
                     <v-img 
                       :width="24" 
                       src="
-                        src/assets/facebook.png
+                        https://cdn.discordapp.com/attachments/1001607129385414737/1001607749265788968/facebook.png
                     ">
                     </v-img>
                   </v-col>
@@ -141,7 +141,7 @@
                     <v-img 
                       :width="24" 
                       src="
-                        src/assets/instagram.png
+                        https://cdn.discordapp.com/attachments/1001607129385414737/1001607749613928568/instagram.png
                     ">
                     </v-img>
                   </v-col>
@@ -149,7 +149,7 @@
                     <v-img 
                       :width="24" 
                       src="
-                        src/assets/twitter.png
+                        https://cdn.discordapp.com/attachments/1001607129385414737/1001610823761928313/twitter.png
                     ">
                     </v-img>
                   </v-col>
@@ -157,7 +157,7 @@
                     <v-img 
                       :width="24" 
                       src="
-                        src/assets/line.png
+                        https://cdn.discordapp.com/attachments/1001607129385414737/1001607749983031448/line.png
                     ">
                     </v-img>
                   </v-col>
@@ -193,7 +193,7 @@
             <v-img 
               :width="60" 
               src="
-                src/assets/paypal.png
+                https://cdn.discordapp.com/attachments/1001607129385414737/1001607750289199216/paypal.png
             ">
             </v-img>
           </v-col>
@@ -201,7 +201,7 @@
             <v-img 
               :width="50" 
               src="
-                src/assets/applePay.png
+                https://cdn.discordapp.com/attachments/1001607129385414737/1001607747290271904/applePay.png
             ">
             </v-img>
           </v-col>

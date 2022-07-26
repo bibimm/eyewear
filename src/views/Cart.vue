@@ -162,7 +162,7 @@
                       <div class="tw-opacity-50 hover:tw-opacity-80">
                         <v-img
                           :width="15"
-                          src="src/assets/exit.png"
+                          src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607748905095229/exit.png"
                         >
                         </v-img>
                       </div>
@@ -302,7 +302,7 @@
                     >
                       <v-img
                         :width="100"
-                        src="src/assets/purchaseComplete.png"
+                        src="https://cdn.discordapp.com/attachments/1001607129385414737/1001610823271190528/purchaseComplete.png"
                       >
                       </v-img>
                     </div>
@@ -340,7 +340,7 @@
                     >
                       <v-img
                           :width="15"
-                          src="src/assets/exit.png"
+                          src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607748905095229/exit.png"
                         >
                         </v-img>
                       </div>

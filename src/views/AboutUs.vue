@@ -105,7 +105,9 @@
             </div>
           </v-col>
           <v-col cols="6">
-            <v-img src="src/assets/pic5.jpg" width="100%" contain></v-img>
+            <v-img src="https://cdn.discordapp.com/attachments/1001607129385414737/1001610822809821264/pic5.jpg" 
+              width="100%" contain>
+            </v-img>
           </v-col>
         </v-row>
       </v-col>

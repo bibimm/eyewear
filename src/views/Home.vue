@@ -370,7 +370,7 @@
       "
     >
       <v-img
-        src="src/assets/arrow3.png"
+        src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607747806175383/arrow3.png"
         :width="30"
       >
       </v-img>
