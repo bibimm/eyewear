@@ -83,7 +83,7 @@
                         hover:tw-border-black
                         "
                       >
-                        ACCESORIES
+                        ACCESORIES 
                       </div>
                     </router-link>
                   </v-col>   
@@ -318,11 +318,11 @@
                   <!-- </v-col> -->
                   <!-- account ---------------------------------------------------------------------->
                   <v-col cols="6"  class="d-flex justify-end align-center">
-                    <router-link to="/addstock">
+                    <router-link to="inventory">
                       <div class="d-flex justify-end align-center tw-pl-5">
                         <v-img
+                          src="src/assets/account.png"
                           :width="20"
-                          src="https://cdn-icons-png.flaticon.com/512/709/709579.png"
                         >
                         </v-img>
                       </div>
@@ -343,9 +343,6 @@
                   <!-- cart ------------------------------------------------------------------------>
                   <v-col cols="6" class="d-flex justify-end align-center">
                     <router-link to="/cart">
-                      <!-- shopping bag -->
-                        <!-- :style="{'background-image':'url(https://cdn-icons-png.flaticon.com/512/1656/1656850.png)'}" -->
-
                       <div 
                         class="
                         d-flex 
@@ -357,7 +354,7 @@
                       >
                         <v-img
                           :width="24"
-                          src="https://cdn-icons-png.flaticon.com/512/1656/1656850.png"
+                          src="src/assets/bag.png"
                         >
                         </v-img>
                         <span class="
@@ -377,29 +374,15 @@
                           {{ cartLength }}
                       
                         </span>
-                        
-                        <!-- <div :style="{'background-image':'url(https://cdn-icons-png.flaticon.com/512/1656/1656850.png)'}">
-                        </div> -->
-                        
                       </div>
                     </router-link>
                   </v-col>
-
                 </v-row>
-                    
-                    
-                    
               </v-col>
             </v-row>
           </v-col>
-
-
-
-
         </v-row>
       </v-col>
-      
-
     </v-row>
     <v-row no-gutters>
       <v-col cols="12"
@@ -461,7 +444,6 @@
 import { useProductStore } from '../stores/products';
 import { computed, ref } from 'vue';
 const store = useProductStore();
-// const products = store.products
 const cartLength = computed(() => store.cart.length);
 const msg = ref('')
 const showProducts = ref(store.products)
@@ -469,20 +451,11 @@ const awesome = ref(false);
 const dialog = ref(false);
 const dialogg = ref(false);
 
-// export default {
-//   data: () => ({
-//     width: 150,
-//     aspectRatio: 16 / 9,
-//   }),
-// };
 const filterByName = () => {
   showProducts.value = store.products
-  // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
-    // console.log(msg.value.toUpperCase())
     return each.name.toUpperCase().includes(msg.value.toUpperCase())
   })
-  // console.log(filter)
   return showProducts.value = filter
 }
 
@@ -500,15 +473,11 @@ header {
   transition: 0.5s ;
 }
 header.sticky {
-  // background: #f6f6ed;
   background: #fff;
   box-shadow: 0px 0.5px 3px rgb(210, 210, 210);
 }    
 .input-search{
-  // background-color: aqua;
   position: absolute;
-  // width: 100px;
-  // height: 100px;
   left: 50%;
   // top: 50%;
   display: flex;

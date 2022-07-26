@@ -208,32 +208,21 @@
   </v-container>
 </template>
 
-<!-- <script setup>
-import { useProductStore } from "@/stores/products";
-const store = useProductStore();
-console.log(store.products);
-</script> -->
-
 <script setup>
 import { ref } from 'vue';
 import { useProductStore } from "@/stores/products";
 
 const store = useProductStore();
 const storeFilterSunglasses = store.filterByCategory("sunglasses")
- 
-const page = 1;
 
 const msg = ref('')
 const showProducts = ref(storeFilterSunglasses)
 
 const filterByName = () => {
   showProducts.value = storeFilterSunglasses
-  // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
-    // console.log(msg.value.toUpperCase())
     return each.name.toUpperCase().includes(msg.value.toUpperCase())
   })
-  // console.log(filter)
   return showProducts.value = filter
 }
 
@@ -257,7 +246,8 @@ const addedCart = (item, index) => {
   display: block;
   width: 100%;
   border: none;
-  background-color: #afad73;
+  // background-color: #afad73;
+  background-color: #cdb972;
   padding: 10px 0px;
   cursor: pointer;
   text-align: center;
@@ -266,7 +256,8 @@ const addedCart = (item, index) => {
   color: white;
 }
 .block:hover {
-  background-color: #979661;
+  // background-color: #979661;
+    background-color: #b09f62;
 }
 .on-hover {
   .block {

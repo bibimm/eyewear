@@ -6,7 +6,7 @@ export const useProductStore = defineStore({
     msg: ref('Hi'),
     category: [ 'eyeglasses', 'sunglasses', 'accesories'],
     products: [
-      { id: 1, name: 'Lilly', addCarts: false, price: 3190, each: 1, image: [
+      { id: 1, name: 'Lilly', addCarts: false, price: 3190, each: 13, image: [
         {
           src: 'https://jp.owndays.com/storage/products/PDEfoZi8IMCzEipzIvNAZfJe5GkmqRbr9abWRj4y.jpeg',
         },
@@ -148,7 +148,8 @@ export const useProductStore = defineStore({
     ],
     cart: [],
     newBestBtn: false,
-    eachCart: 1,
+    addProducts: false,
+    // eachCart: ,
   }),
   actions: {
     pushData(param) {
@@ -156,7 +157,77 @@ export const useProductStore = defineStore({
     },
     addCart(data) {
       this.cart.push(data)
+      console.log(this.cart)
+      console.log(this.products)
     },
+    // addCart(data) {
+    //   console.log(data)
+    //   console.log(data.index)
+    //   const find = this.cart.find((item)=>{
+    //     if(item.name == data.name) {
+    //       data.eachCart++
+    //       console.log('find')
+    //       console.log(data)
+    //       console.log(data.eachCart)
+    //       return item
+    //     }
+    //     // this.cart.push(data)
+    //     console.log(item)
+    //     console.log(this.cart)
+    //     // return ;
+  
+    //       // this.cart.splice(index, 1, find) 
+  
+    //     // console.log('splice')
+    //     // console.log(this.cart)
+
+        
+    //   })
+    //   console.log('notInloop')
+    //   console.log('find')
+    //   console.log(find)
+    //   this.cart.push(data)
+    //   console.log(this.cart)
+    //   if(data.eachCart > 1) {
+    //     // data.eachCart++
+    //     console.log('ifeachCart>1')
+    //     console.log(data.eachCart)
+    //     this.cart.splice(find, 1)
+    //   }
+    //   console.log('afterEachCart>1splice')
+    //   console.log(this.cart)
+
+    //   // if(data.eachCart > 2) {
+    //   //   data.eachCart++
+    //   //   console.log('ifeachCart>2')
+    //   //   console.log(eachCart)
+    //   //   this.cart.splice(find, 1)
+    //   // }
+    //   // console.log('afterEachCart>2splice')
+    //   // console.log(this.cart)
+    //   // const index = this.cart.find((item)=>{
+    //   //   if(item.name == data.name) {
+    //   //     return item
+    //   //   }
+    //   //   this.cart.splice(index, 1, find)
+    //   //   console.log('index')
+    //   //   console.log(this.cart)
+
+    //   // })
+    //   // this.cart.splice(find, 1)
+    //   // console.log('splice')
+    //   // console.log(this.cart)
+
+      
+
+
+      
+      
+
+    //   // console.log(find)
+    //   // find.addCarts = true 
+    //   // this.products.splice(index, 1, find) 
+    // },
     // addCart(data) {
       
     //   console.log(data)
@@ -209,12 +280,15 @@ export const useProductStore = defineStore({
     deleteAllCart() {
       this.cart.splice(0, this.cart.length);
     },
-    update(name, index){
+    updateProduct(){
+      this.addProducts = true 
+    },
+    update(name, index) {
       const find = this.products.find((each)=>{
         if(each.name == name) return each
       })
       find.addCarts = true 
-      this.products.splice(index, 1, find) 
+      // this.products.splice(index, 1, find) 
     },
     checkOut(){
       if(this.cart.length != 0 || this.cart.length != null || this.cart.length != undefined) {
@@ -233,14 +307,12 @@ export const useProductStore = defineStore({
     deleteTheProd(index) {
       this.products.splice(index, 1);
     },
-    increaseCount(index) {
-      this.cart.forEach((each)=>{
-        const find = this.products.find((item)=>{
-          if(each.name == item.name) return item
-        })
-        if(this.cart[index].each >= find.each) {}
-        else this.cart[index].each++
+    increaseCount(item, index) {
+      const find = this.products.find((each)=>{
+        if(each.name == item) return each
       })
+      if(this.cart[index].each >= find.each) {}
+      else this.cart[index].each++
     },
     decreaseCount(index) {
       if(this.cart[index].each == 1) {}
@@ -270,7 +342,21 @@ export const useProductStore = defineStore({
         this.newBestBtn = true
         return this.newBestBtn
       }
-    }
+    },
+    updateByEdit(item) {
+      const find = this.products.find((each, index) => {
+        console.log(index)
+        console.log(item.index)
+
+        if (index == item.index.value) return each
+      })
+      find.name = item.name.value
+      find.price = item.price.value
+      find.each = item.each.value
+      find.image = item.image.value
+      find.category = item.category.value
+      this.products.splice(item.index.value, 1, find)
+    },
     
   },
 });

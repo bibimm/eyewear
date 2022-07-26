@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 import Home from '@/views/Home.vue';
 import Product from '@/views/Product.vue';
 import Cart from '@/views/Cart.vue';
-import AddStock from '@/views/AddStock.vue';
+import Inventory from '@/views/Inventory.vue';
 import Eyeglasses from '@/views/Eyeglasses.vue';
 import Sunglasses from '@/views/Sunglasses.vue';
 import Accesories from '@/views/Accesories.vue';
@@ -26,9 +26,9 @@ const routes = [
     component: Cart,
   },
   {
-    path: '/addstock',
-    name: 'AddStock',
-    component: AddStock,
+    path: '/inventory',
+    name: 'Inventory',
+    component: Inventory,
   },
   {
     path: '/eyeglasses',

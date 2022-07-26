@@ -7,7 +7,7 @@
         hide-delimiter-background
         :show-arrows="false"
         delimiter-icon="mdi-minus"
-        progress
+        progress="#cbeffb"
         touch
       >
         <!-- <v-carousel-item v-for="(topicCarousel, i) in topicCarousel" :key="i"> -->
@@ -141,14 +141,6 @@
               active-class="success"
               show-arrows
             > -->
-            <!-- <div
-              v-if="storeFilterNewArrival.length > 3"
-            > 
-              <v-btn>see more</v-btn> -->
-              <!-- <v-col cols="12">
-                <v-row no-gutters> -->
-
-          
               <v-col cols="4"
                 v-for="(item, index) in storeFilterNewArrival"
                 :key="item"
@@ -156,14 +148,6 @@
                 tw-mb-1
                 "
               >
-                <!-- <div
-                  v-if="i == 3"
-                  i = null
-                >{{i}}
-                  <v-btn
-                    @click="i = 3"
-                  >see more</v-btn>
-                </div> -->
                 <v-hover
                   v-slot="{ isHovering, props }"
                   open-delay="100"
@@ -251,12 +235,7 @@
                     </v-row>
                   </div>
                 </v-hover>
-                
-              <!-- </v-col>
-              </v-row> -->
-
               </v-col>
-            <!-- </div> -->
             <!-- </v-slide-group>
           </v-sheet> -->
         </v-row>
@@ -376,96 +355,169 @@
         </v-row>
       </v-col>
     </v-row>
+<!-- GO SHOPPING  ----------------------------------------------------------------------------------->
+<v-row no-gutters class="
+  d-flex
+  justify-center
+  align-center
+  tw-py-20
+  
+">
+  <router-link to="product">
+
+  <v-btn
+   rounded="pill"
+   plain
+   color="#c24e2b"
+    class="
+      tw-text-2xl
+      text-white
+    "
+  >
+    GO SHOPPING
+    <div
+      class="
+        tw-pl-2
+      "
+    >
+      <v-img
+        src="src/assets/arrow3.png"
+        :width="30"
+      >
+      </v-img>
+    </div>
+    
+  </v-btn>
+  </router-link>
+</v-row>
+<!-- GO SHOPPING  ----------------------------------------------------------------------------------->
+  <!-- <v-row no-gutters class="tw-py-10">
+    <v-col cols="12">
+      <v-card>
+        <v-row no-gutters>
+
+    <v-col cols="12"
+      class="
+        d-flex
+        justify-center
+        align-center
+        tw-text-4xl
+      "
+    >
+      GO SHOPPING
+    </v-col>
+    <v-col cols="3"
+    class="
+        bg-[url('store.products[1].image[1].src')]
+
+        "
+    >
+      
+      <v-hover v-slot="{ isHovering, props }">
+        <v-card class="tw-p-4"
+          :class="{ 'on-hover': isHovering }"
+              v-bind="props"
+        >
+          <v-img
+            :src="store.products[1].image[0].src"
+            :width="400"
+          >
+          </v-img>
+          <span
+            class="
+              tw-text-xl
+              d-flex
+              justify-center
+              align-center
+              tw-font-medium
+              tw-text-[#c24e2b]
+            "
+          >
+          ALL PRODUCT
+
+          </span>
+        </v-card>
+      </v-hover>
+    </v-col>
+    <v-col cols="3">
+      
+      <v-card class="tw-p-4">
+        <v-img
+          :src="store.products[3].image[3].src"
+          :width="400"
+        >
+        </v-img>
+        <span
+          class="
+            tw-text-xl
+            d-flex
+            justify-center
+            align-center
+            tw-font-medium
+            tw-text-[#c24e2b]
+          "
+        >
+      EYEGLASSES
+
+        </span>
+
+      </v-card>
+    </v-col>
+    <v-col cols="3">
+      
+      <v-card class="tw-p-4">
+        <v-img
+          :src="store.products[7].image[1].src"
+          :width="400"
+        >
+        </v-img>
+        <span
+          class="
+            tw-text-xl
+            d-flex
+            justify-center
+            align-center
+            tw-font-medium
+            tw-text-[#c24e2b]
+          "
+        >
+      SUNGLASSES
+
+        </span>
+
+      </v-card>
+    </v-col>
+    <v-col cols="3">
+      
+      <v-card class="tw-p-4">
+        <v-img
+          :src="store.products[9].image[0].src"
+          :width="400"
+        >
+        </v-img>
+        <span
+          class="
+            tw-text-xl
+            d-flex
+            justify-center
+            align-center
+            tw-font-medium
+            tw-text-[#c24e2b]
+          "
+        >
+      ACCESORIES
+          
+        </span>
+
+      </v-card>
+    </v-col>
+    </v-row>
+      </v-card>
+    </v-col>
+  </v-row> -->
 
   </v-container>
 </template>
-
-<!-- <script >
-import { useProductStore } from "@/stores/products";
-import { ref } from "vue";
-
-export default {
-  setup() {
-    const store = useProductStore();
-    const name = ref("");
-    const price = ref("");
-    const each = ref("");
-
-    const storeFilterNewArrival = store.filterByType("newArrival")
-    const storeFilterBestSeller = store.filterByType("bestSeller")
-
-    const newBtn = ref(true);
-    const bestBtn = ref(false);
- 
-
-    return { store, name, price, each, storeFilterNewArrival, storeFilterBestSeller, newBtn, bestBtn };
-  },
-  
-  data () {
-    return {
-      picCarousel: [
-        {
-          src: 'https://i.pinimg.com/564x/38/9a/72/389a723f1c0069425d592e8ed70ba837.jpg',
-        },
-        {
-          src: 'https://i.pinimg.com/564x/e6/22/7c/e6227c93897384cd72d7e622fe0e288a.jpg',
-        },
-        {
-          src: 'https://i.pinimg.com/564x/e6/5b/c9/e65bc929fb2abc4c3d7dc335bcf969ac.jpg',
-        },
-      ],
-      colorsCarousel: [
-        "#e8f1f8",
-        "#feefed",
-        "#f7eef9",
-        "#f9f2e8",
-        "#f7f7ed",
-        "#e2f5fb",
-        "#e9f4ec",
-      ],
-      topicCarousel: [
-        "SUNGLASSES", 
-        "Environment Friendly Frame", 
-        "Classic Design", 
-      ], 
-      detailCarousel: [
-        "UV Protecting", 
-        "New Arrivals", 
-        "Easy To wear", 
-      ],
-      model: null,
-      // textButton:  ["ADD TO CART", "ADDED"] ,
-    }
-  },
-  
-
-  methods() {
-    Vue.filter('toCurrency', function (value) {
-      if (typeof value !== "number") {
-        return value;
-      }
-      var formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-      });
-      return formatter.format(value);
-    });
-  },
-
-  
-};
-
-
-// let btnAddToCart = document.querySelector('button');
-
-// btnAddToCart.addEventListener('click', () => {
-//   btnAddToCart.innerText = 'ADDING...';
-//   setTimeout(() => {
-//     btnAddToCart.innerText = 'ADDED';
-//   }, 5000);
-// })
-
-</script> -->
 
 <script setup>
 import { useProductStore } from "@/stores/products";
@@ -530,14 +582,9 @@ const clickNewOrBest = (name) => {
 }
 
 const addedCart = (item, index) => {
-  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
+  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image, eachCart:1 })
   store.update(item.name, index)
 }
-
-
-    
-  
-  
 
   // methods() {
   //   Vue.filter('toCurrency', function (value) {
@@ -551,19 +598,6 @@ const addedCart = (item, index) => {
   //     return formatter.format(value);
   //   });
   // },
-
-  
-
-
-
-// let btnAddToCart = document.querySelector('button');
-
-// btnAddToCart.addEventListener('click', () => {
-//   btnAddToCart.innerText = 'ADDING...';
-//   setTimeout(() => {
-//     btnAddToCart.innerText = 'ADDED';
-//   }, 5000);
-// })
 
 </script>
 
@@ -581,7 +615,8 @@ const addedCart = (item, index) => {
   display: block;
   width: 100%;
   border: none;
-  background-color: #afad73;
+  // background-color: #afad73;
+  background-color: #cdb972;
   padding: 10px 0px;
   cursor: pointer;
   text-align: center;
@@ -591,7 +626,8 @@ const addedCart = (item, index) => {
 
 }
 .block:hover {
-  background-color: #979661;
+  // background-color: #979661;
+    background-color: #b09f62;
 }
 .on-hover {
   .block {
@@ -605,5 +641,13 @@ const addedCart = (item, index) => {
   opacity: 0;
   transition-duration: 0.25s;
  }
+
+ .v-card {
+    transition: opacity .4s ease-in-out;
+  }
+
+  .v-card:not(.on-hover) {
+    opacity: 0.6;
+  }
 
 </style>

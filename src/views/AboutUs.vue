@@ -12,107 +12,100 @@
               d-flex justify-center align-center
             "
           >
-          <div
-            class="text-left
-              tw-space-y-10
-            "
-          >
-            <v-row no-gutters class="
-              tw-text-xl
-              tw-tracking-widest
-              ">
-              Get to know me
-            </v-row>
-            <v-row no-gutters class="
-              tw-text-6xl
-              tw-tracking-[0.15em]
-              tw-space-y-2
-              d-flex
-              justify-center
-              align-center
-              tw-font-medium
-              ">
-              <v-col cols="12">
-                <v-row 
-                  no-gutters
-                >
-                  ANCHISTHA
-
-                </v-row>
-                <v-row no-gutters>
-                  TINCHATARAK
-
-                </v-row>
-                
-              </v-col>
-            </v-row>
-            <v-row no-gutters
-              class="
+            <div
+              class="text-left
+                tw-space-y-10
+              "
+            >
+              <v-row no-gutters class="
                 tw-text-xl
-                tw-font-normal
-                tw-tracking-wider
-              "
-            >
-              You can called me 'Beam'
-            </v-row>
-            <v-row no-gutters
-              class="
-              tw-text-xl
-              
-              "
-            >
-              <!-- I am a Junior, computer science 
-              king mongkut's institute of technology ladkrabang -->
-              <v-col cols="12"
+                tw-tracking-widest
+                ">
+                Get to know me
+              </v-row>
+              <v-row no-gutters class="
+                tw-text-6xl
+                tw-tracking-[0.15em]
+                tw-space-y-2
+                d-flex
+                justify-center
+                align-center
+                tw-font-medium
+                ">
+                <v-col cols="12">
+                  <v-row 
+                    no-gutters
+                  >
+                    ANCHISTHA
+
+                  </v-row>
+                  <v-row no-gutters>
+                    TINCHATARAK
+
+                  </v-row>
+                  
+                </v-col>
+              </v-row>
+              <v-row no-gutters
                 class="
-                  tw-space-y-1
+                  tw-text-xl
+                  tw-font-normal
+                  tw-tracking-wider
+                "
+              >
+                You can called me 'Beam'
+              </v-row>
+              <v-row no-gutters
+                class="
+                tw-text-xl
                 
                 "
               >
-                <v-row no-gutters>
-                  I'm a Junior Computer Science Student
-                </v-row>
-                <v-row no-gutters>
-                  in the Faculty of Science, KMITL
-                </v-row>
-                <v-row no-gutters>
-                  2020 - Present
-                </v-row>
-              </v-col>
-            </v-row>
-            <v-row no-gutters
-              class="
-              tw-capitalize
-              tw-text-xl
-              tw-italic
-              tw-tracking-wider
-              "
-            >
-              <v-col cols="12">
-                <v-row no-gutters
+                <v-col cols="12"
                   class="
-                    tw-text-base
-                    tw-underline tw-underline-offset-1
-                  
+                    tw-space-y-1
                   "
                 >
-                  SKILL
-                </v-row>
-                <v-row no-gutters>
-                  UX / UI Design
-                </v-row>
-                <v-row no-gutters>
-                  Front-end Developer
-                </v-row>
-                
-              </v-col>
-              
-            </v-row>
-</div>
+                  <v-row no-gutters>
+                    I'm a Junior Computer Science Student
+                  </v-row>
+                  <v-row no-gutters>
+                    in the Faculty of Science, KMITL
+                  </v-row>
+                  <v-row no-gutters>
+                    2020 - Present
+                  </v-row>
+                </v-col>
+              </v-row>
+              <v-row no-gutters
+                class="
+                tw-capitalize
+                tw-text-xl
+                tw-italic
+                tw-tracking-wider
+                "
+              >
+                <v-col cols="12">
+                  <v-row no-gutters
+                    class="
+                      tw-text-base
+                      tw-underline tw-underline-offset-1
+                    "
+                  >
+                    SKILL
+                  </v-row>
+                  <v-row no-gutters>
+                    UX / UI Design
+                  </v-row>
+                  <v-row no-gutters>
+                    Front-end Developer
+                  </v-row>
+                </v-col>
+              </v-row>
+            </div>
           </v-col>
           <v-col cols="6">
             <v-img src="src/assets/pic5.jpg" width="100%" contain></v-img>
-
           </v-col>
         </v-row>
       </v-col>

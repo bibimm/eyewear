@@ -1,17 +1,5 @@
 <template>
   <v-container class="tw-mt-16">
-    <!-- <div v-for="item in store.products" :key="item.name">
-      <span class="h1"> Name : {{ item.name }}</span>
-      <br />
-      <span class="h1"> Price : {{ item.price }}</span>
-      <br />
-
-      <span class="h1"> Stock : {{ item.each }}</span>
-      <br />
-      <br />
-
-    </div> -->
-  
     <v-row no-gutters>
       <v-col cols="12">
         <v-row no-gutters class="tw-py-4 tw-text-sm tw-text-gray-400 tw-font-light">
@@ -83,14 +71,6 @@
             tw-mb-1
             "
           >
-          <!-- <v-col cols="4"
-            v-for="item in store.products"
-            :key="item.name"
-            class="
-            tw-mb-4
-            "
-          > -->
-          <!-- แก้ป็น v hover -->
             <v-hover
             v-slot="{ isHovering, props }"
             open-delay="100"
@@ -157,35 +137,7 @@
               >
                 stock: {{ item.each }}
               </v-row>
-              <!-- stock -->
-              <!-- <v-row no-gutters
-                v-show="upHere"
-                align="center"
-                justify="center"
-                class="
-                  tw-pb-3
-                  tw-text-gray-500
-                  tw-text-sm
-                "
-              >
-                stock: {{ item.each }}
-              </v-row> -->
               <v-row no-gutters>
-                <!-- <button
-                  v-show="upHere"
-                  @click="store.pushData({ name: eachItem.name , price: eachItem.price,  each: 1 })"
-                  type="button"
-                  class="
-                    block
-                    tw-bg-teal-600
-                    tw-text-white
-                    tw-rounded
-                  "
-                > -->
-                <!-- <v-btn @click="store.addCart(item)" color="red"> Cart{{ item.name }}</v-btn> -->
-                <!-- <v-btn @click="store.addCart({ name: item.name, price: item.price, each: 1 })" color="red"> Cart</v-btn> -->
-                <!-- {{ item }} -->
-              
                 <v-btn
                   @click="addedCart(item, index)"
                   :disabled="item.each<=0"
@@ -203,44 +155,15 @@
                     ADDED
                   </span>
                 </v-btn>
-
-                  <!-- {{ textButton }} -->
-
-                  <!-- <span v-for="(textButton, i) in textButton" :key="i"
-                  >
-                    {{ textButton }}
-                  </span> -->
-                  
-                  <!-- <span v-for="textButton in textButtons" :key="textButton">
-                    {{ textButton[i] }}
-                  </span> -->
-                  
-                
               </v-row>
             </div>
             </v-hover>
           </v-col>
         </v-row>
       </v-col>
-
-      <!-- <v-col cols="12">
-        <div class="text-center">
-          <v-pagination
-            v-model="page"
-            :length="4"
-            circle
-          ></v-pagination>
-        </div>
-      </v-col> -->
     </v-row>
   </v-container>
 </template>
-
-<!-- <script setup>
-import { useProductStore } from "@/stores/products";
-const store = useProductStore();
-console.log(store.products);
-</script> -->
 
 <script setup>
 import { ref } from 'vue';
@@ -253,12 +176,9 @@ const showProducts = ref(store.products)
 
 const filterByName = () => {
   showProducts.value = store.products
-  // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
-    // console.log(msg.value.toUpperCase())
     return each.name.toUpperCase().includes(msg.value.toUpperCase())
   })
-  // console.log(filter)
   return showProducts.value = filter
 }
 
@@ -266,23 +186,6 @@ const addedCart = (item, index) => {
   store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
   store.update(item.name, index)
 }
-
-// export default {
-//   setup() {
-//     const store = useProductStore();
-//     return { store };
-//   },
-//   data () {
-//     return {
-      
-//       upHere : false,
-
-//       textButton:  ["ADD TO CART", "ADDED"] ,
-
-//       page: 1,
-//     }
-//   },
-// };
 </script>
 
 <style lang="scss" scoped>
@@ -298,7 +201,8 @@ const addedCart = (item, index) => {
   display: block;
   width: 100%;
   border: none;
-  background-color: #afad73;
+  // background-color: #afad73;
+  background-color: #cdb972;
   padding: 10px 0px;
   cursor: pointer;
   text-align: center;
@@ -307,7 +211,8 @@ const addedCart = (item, index) => {
   color: white;
 }
 .block:hover {
-  background-color: #979661;
+  // background-color: #979661;
+    background-color: #b09f62;
 }
 .on-hover {
   .block {

@@ -1,17 +1,5 @@
 <template>
   <v-container class="tw-mt-16">
-    <!-- <div v-for="item in store.products" :key="item.name">
-      <span class="h1"> Name : {{ item.name }}</span>
-      <br />
-      <span class="h1"> Price : {{ item.price }}</span>
-      <br />
-
-      <span class="h1"> Stock : {{ item.each }}</span>
-      <br />
-      <br />
-
-    </div> -->
-  
     <v-row no-gutters>
       <v-col cols="12">
         <v-row no-gutters class="tw-py-4 tw-text-sm tw-text-gray-400 tw-font-light">
@@ -84,135 +72,99 @@
             tw-mb-1
             "
           >
-          <!-- แก้ป็น v hover -->
             <v-hover
             v-slot="{ isHovering, props }"
             open-delay="100"
             >
-            <div
-              class="description
-              tw-mx-4
-              tw-my-0
-              tw-px-2
-              tw-py-2
-              "
-              :class="{ 'on-hover': isHovering }"
-              v-bind="props"
-            >
-              <v-row no-gutters>
-                <v-carousel 
-                  height="200"
-                  hide-delimiters
-                  show-arrows-on-hover
-                >
-                  <v-carousel-item
-                    v-for="(item, i) in item.image"
-                    :key="i"
-                    :src="item"
-                  ></v-carousel-item>
-                </v-carousel>
-              </v-row>
-              
-              <v-row no-gutters 
-                align="center"
-                justify="center"
-                class="
-                  tw-font-medium
-                  tw-text-lg
-                  tw-pb-0
-                  tw-tracking-wider
+              <div
+                class="description
+                tw-mx-4
+                tw-my-0
+                tw-px-2
+                tw-py-2
                 "
+                :class="{ 'on-hover': isHovering }"
+                v-bind="props"
               >
-                {{ item.name }}
-              </v-row>
-              <v-row no-gutters
-                align="center"
-                justify="center"
-                class="
-                  tw-pb-0
-                  tw-tracking-wide
-                "
-              >
-                ฿{{ item.price }}
-                <!-- ฿{{ eachItem.price }} -->
-                <!-- {{ item.price | toCurrency }} -->
-                <!-- {{ invoice.fees | toCurrency }} -->
-              </v-row>
-              <v-row no-gutters
-                align="center"
-                justify="center"
-                class="
-                  stock
-                  tw-pb-1.5
-                  tw-text-gray-500
-                  tw-text-sm
-                  tw-tracking-wide
-                "
-              >
-                stock: {{ item.each }}
-              </v-row>
-              <v-row no-gutters>
-                <!-- <button
-                  v-show="upHere"
-                  @click="store.pushData({ name: eachItem.name , price: eachItem.price,  each: 1 })"
-                  type="button"
-                  class="
-                    block
-                    tw-bg-teal-600
-                    tw-text-white
-                    tw-rounded
-                  "
-                > -->
-                <!-- <v-btn @click="store.addCart(item)" color="red"> Cart{{ item.name }}</v-btn> -->
-                <!-- <v-btn @click="store.addCart({ name: item.name, price: item.price, each: 1 })" color="red"> Cart</v-btn> -->
-                <!-- {{ item }} -->
-                <v-btn
-                    @click="addedCart(item, index)"
-                    :disabled="item.each<=0"
-                    type="button"
-                    block
-                    rounded-lg
-                    text="white"
-                    class="
-                    block"
-                  > 
-                    <span v-if="item.addCarts==false">
-                      ADD TO BAG
-                    </span>
-                    <span v-if="item.addCarts==true">
-                      ADDED
-                    </span>
-                  </v-btn>
-
-                  <!-- {{ textButton }} -->
-
-                  <!-- <span v-for="(textButton, i) in textButton" :key="i"
+                <v-row no-gutters>
+                  <v-carousel 
+                    height="200"
+                    hide-delimiters
+                    show-arrows-on-hover
                   >
-                    {{ textButton }}
-                  </span> -->
-                  
-                  <!-- <span v-for="textButton in textButtons" :key="textButton">
-                    {{ textButton[i] }}
-                  </span> -->
-                  
+                    <v-carousel-item
+                      v-for="(item, i) in item.image"
+                      :key="i"
+                      :src="item"
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-row>
                 
-              </v-row>
-            </div>
+                <v-row no-gutters 
+                  align="center"
+                  justify="center"
+                  class="
+                    tw-font-medium
+                    tw-text-lg
+                    tw-pb-0
+                    tw-tracking-wider
+                  "
+                >
+                  {{ item.name }}
+                </v-row>
+                <v-row no-gutters
+                  align="center"
+                  justify="center"
+                  class="
+                    tw-pb-0
+                    tw-tracking-wide
+                  "
+                >
+                  ฿{{ item.price }}
+                  <!-- ฿{{ eachItem.price }} -->
+                  <!-- {{ item.price | toCurrency }} -->
+                  <!-- {{ invoice.fees | toCurrency }} -->
+                </v-row>
+                <v-row no-gutters
+                  align="center"
+                  justify="center"
+                  class="
+                    stock
+                    tw-pb-1.5
+                    tw-text-gray-500
+                    tw-text-sm
+                    tw-tracking-wide
+                  "
+                >
+                  stock: {{ item.each }}
+                </v-row>
+                <v-row no-gutters>
+                  <v-btn
+                      @click="addedCart(item, index)"
+                      :disabled="item.each<=0"
+                      type="button"
+                      block
+                      rounded-lg
+                      text="white"
+                      class="
+                      block"
+                    > 
+                      <span v-if="item.addCarts==false">
+                        ADD TO BAG
+                      </span>
+                      <span v-if="item.addCarts==true">
+                        ADDED
+                      </span>
+                    </v-btn>
+                </v-row>
+              </div>
             </v-hover>
           </v-col>
         </v-row>
       </v-col>
-
-      
     </v-row>
   </v-container>
 </template>
-
-<!-- <script setup>
-import { useProductStore } from "@/stores/products";
-const store = useProductStore();
-console.log(store.products);
-</script> -->
 
 <script setup>
 import { ref } from 'vue';
@@ -220,20 +172,16 @@ import { useProductStore } from "@/stores/products";
 
 const store = useProductStore();
 const storeFilterAccesories = store.filterByCategory("accesories")
- 
-const page = 1;
 
 const msg = ref('')
 const showProducts = ref(storeFilterAccesories)
+console.log("test", showProducts)
 
 const filterByName = () => {
   showProducts.value = storeFilterAccesories
-  // console.log(showProducts.value)
   const filter = showProducts.value.filter((each) => {
-    // console.log(msg.value.toUpperCase())
     return each.name.toUpperCase().includes(msg.value.toUpperCase())
   })
-  // console.log(filter)
   return showProducts.value = filter
 }
 
@@ -257,7 +205,8 @@ const addedCart = (item, index) => {
   display: block;
   width: 100%;
   border: none;
-  background-color: #afad73;
+  // background-color: #afad73;
+  background-color: #cdb972;
   padding: 10px 0px;
   cursor: pointer;
   text-align: center;
@@ -266,7 +215,8 @@ const addedCart = (item, index) => {
   color: white;
 }
 .block:hover {
-  background-color: #979661;
+  // background-color: #979661;
+    background-color: #b09f62;
 }
 .on-hover {
   .block {

@@ -4,7 +4,7 @@ export const useCounterStore = defineStore({
   id: 'counter',
   state: () => ({
     counter: 1,
-    number: 0,
+    number: 1,
     text: '55555',
   }),
   getters: {
