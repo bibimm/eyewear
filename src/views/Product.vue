@@ -183,7 +183,7 @@ const filterByName = () => {
 }
 
 const addedCart = (item, index) => {
-  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
+  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image, index: index })
   store.update(item.name, index)
 }
 </script>

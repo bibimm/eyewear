@@ -82,7 +82,15 @@
                             "
                           >
                             <v-row no-gutters class="tw-pl-10 tw-text-lg">
+                              <v-col cols="12">
                               {{ items.name }}
+                              </v-col>
+                              <v-col cols="12" class="tw-text-base tw-text-gray-400 tw-font-normal">
+                              stock: {{ productEach(items) }}
+                              </v-col>
+                            </v-row>
+                            <v-row no-gutters class="tw-pl-10 tw-text-base tw-text-gray-300">
+                              
                             </v-row>
                           </v-col>
                           <v-col cols="3" 
@@ -373,6 +381,15 @@ const dialog = ref(false);
 const checkBill = () => {
   store.checkOut()
   store.deleteAllCart()
+}
+
+const productEach = (item) => {
+  const find = store.products.find((each) => {
+    if(item.name == each.name) {
+      return each.each
+    }
+  })
+  return find.each
 }
 
 </script>

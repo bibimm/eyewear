@@ -4,7 +4,7 @@
       <v-col cols="12">
         <v-row no-gutters class="tw-py-4 tw-text-sm tw-text-gray-400 tw-font-light">
           <router-link to="/">HOMEPAGE /</router-link> 
-          <a class="tw-text-black tw-ml-1 tw-uppercase">accesssories </a>
+          <a class="tw-text-black tw-ml-1 tw-uppercase">accessories </a>
         </v-row>
       </v-col>
       <v-col cols="12">
@@ -175,7 +175,7 @@ const storeFilterAccesories = store.filterByCategory("accesories")
 
 const msg = ref('')
 const showProducts = ref(storeFilterAccesories)
-console.log("test", showProducts)
+// console.log("test", showProducts)
 
 const filterByName = () => {
   showProducts.value = storeFilterAccesories
@@ -186,7 +186,7 @@ const filterByName = () => {
 }
 
 const addedCart = (item, index) => {
-  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image })
+  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image, index: index  })
   store.update(item.name, index)
 }
       

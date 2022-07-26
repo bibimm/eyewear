@@ -156,131 +156,57 @@ export const useProductStore = defineStore({
       this.products.push(param);
     },
     addCart(data) {
-      this.cart.push(data)
-      console.log(this.cart)
-      console.log(this.products)
+      // const find = this.cart.find((each, index)=>{
+      //   console.log(index)
+      //   console.log( data.index)
+      //   if(index == data.index) return each
+      // })
+      // if(find) {
+      //   find.each = find.each + data.each
+      // }
+      // else {
+      //   this.cart.push(data)
+      // }
+      const find = this.cart.find((each, index) => {
+        if(data.name == each.name) {
+          return each
+        }
+      })
+      if(find) {
+        // find.each = find.each + data.each
+        this.products.find((item) => {
+          if(item.name == find.name) {
+            if(item.each > find.each) {
+              find.each = find.each + data.each
+            }
+            else {}
+          }
+        })
+      }
+      else {
+        this.cart.push(data)
+      }
+
+      // const findd = this.cart.find((each, index, i) => {
+      //   if(this.product[i].each >= each[index].each) {
+      //     addcart
+      //     return findd
+      //   }
+      //   else {
+    
+      //   }
+      // })
+      // if(findd) {
+      //   addcart(findd)
+      // }
     },
-    // addCart(data) {
-    //   console.log(data)
-    //   console.log(data.index)
-    //   const find = this.cart.find((item)=>{
-    //     if(item.name == data.name) {
-    //       data.eachCart++
-    //       console.log('find')
-    //       console.log(data)
-    //       console.log(data.eachCart)
-    //       return item
-    //     }
-    //     // this.cart.push(data)
-    //     console.log(item)
-    //     console.log(this.cart)
-    //     // return ;
-  
-    //       // this.cart.splice(index, 1, find) 
-  
-    //     // console.log('splice')
-    //     // console.log(this.cart)
-
-        
-    //   })
-    //   console.log('notInloop')
-    //   console.log('find')
-    //   console.log(find)
-    //   this.cart.push(data)
-    //   console.log(this.cart)
-    //   if(data.eachCart > 1) {
-    //     // data.eachCart++
-    //     console.log('ifeachCart>1')
-    //     console.log(data.eachCart)
-    //     this.cart.splice(find, 1)
-    //   }
-    //   console.log('afterEachCart>1splice')
-    //   console.log(this.cart)
-
-    //   // if(data.eachCart > 2) {
-    //   //   data.eachCart++
-    //   //   console.log('ifeachCart>2')
-    //   //   console.log(eachCart)
-    //   //   this.cart.splice(find, 1)
-    //   // }
-    //   // console.log('afterEachCart>2splice')
-    //   // console.log(this.cart)
-    //   // const index = this.cart.find((item)=>{
-    //   //   if(item.name == data.name) {
-    //   //     return item
-    //   //   }
-    //   //   this.cart.splice(index, 1, find)
-    //   //   console.log('index')
-    //   //   console.log(this.cart)
-
-    //   // })
-    //   // this.cart.splice(find, 1)
-    //   // console.log('splice')
-    //   // console.log(this.cart)
-
-      
-
-
-      
-      
-
-    //   // console.log(find)
-    //   // find.addCarts = true 
-    //   // this.products.splice(index, 1, find) 
-    // },
-    // addCart(data) {
-      
-    //   console.log(data)
-    //   this.cart.forEach((each)=>{
-    //     if(data.name != each.name) {
-    //       return this.cart.push(data)
-    //     }
-    //   })
-    //   this.cart.forEach((each)=>{
-    //     const find = this.products.find((item)=>{
-    //       if(each.name == item.name) {
-    //         this.eachCart += data.each
-    //         return item
-    //       }
-    //     })
-    //     const index = this.products.find((item)=>{
-    //       if(each.name == item.name) {
-    //         // data.each++
-    //         return item
-    //       }
-    //     })
-    //     const findInCart = this.cart.find((item)=>{
-    //       if(each.name != item.name) {
-    //         return this.cart.push(data)
-    //       }
-    //     })
-
-    //     // this.eachCart
-    //       console.log(this.eachCart)
-    //     // this.cart.splice(index, 1, this.eachCart)
-    //     this.cart.splice(index, 1)
-    //     console.log(data.each)
-    //     data.each = this.eachCart
-    //     // data = this.eachCart
-    //     // return ; 
-    //     // this.cart.push(data);
-    //     console.log(data)
-
-
-    //     //  return this.cart.push(data);
-
-    //   })
-    //   this.cart.push(data);
-    //   console.log(this.cart)
-
-    // },
     deleteCart(index) {
       this.cart.splice(index, 1);
     },
     deleteAllCart() {
       this.cart.splice(0, this.cart.length);
     },
-    updateProduct(){
+    updateProduct() {
       this.addProducts = true 
     },
     update(name, index) {

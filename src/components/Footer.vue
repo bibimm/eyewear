@@ -44,7 +44,7 @@
             </v-row>
             <v-row no-gutters>
               <v-col cols="12">
-                <router-link to="/accessories">
+                <router-link to="/accesories">
                   Accesories
                 </router-link>
               </v-col>

@@ -7,7 +7,7 @@
         hide-delimiter-background
         :show-arrows="false"
         delimiter-icon="mdi-minus"
-        progress="#cbeffb"
+        progress="#fed1f3"
         touch
       >
         <!-- <v-carousel-item v-for="(topicCarousel, i) in topicCarousel" :key="i"> -->
@@ -244,17 +244,6 @@
           v-if="store.newBestBtn == true" 
           class="tw-p-6"
         >
-          <!-- <v-sheet
-            class="mx-auto"
-            elevation="2"
-            max-width="800"
-          >
-            <v-slide-group
-              v-model="model"
-              class="pa-1"
-              active-class="success"
-              show-arrows
-            > -->
               <v-col cols="4"
                 v-for="(item, index) in storeFilterBestSeller"
                 :key="item"
@@ -582,7 +571,7 @@ const clickNewOrBest = (name) => {
 }
 
 const addedCart = (item, index) => {
-  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image, eachCart:1 })
+  store.addCart({ name: item.name, price: item.price, each: 1, image: item.image, index: index })
   store.update(item.name, index)
 }
 
