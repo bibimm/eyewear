@@ -165,7 +165,7 @@
                     <v-img 
                       :width="24" 
                       src="
-                        src/assets/youtube.png
+                        https://cdn.discordapp.com/attachments/1001607129385414737/1001610824638541964/youtube.png
                     ">
                     </v-img>
                   </v-col>
@@ -209,7 +209,7 @@
             <v-img 
               :width="40" 
               src="
-                src/assets/visa.png
+                https://cdn.discordapp.com/attachments/1001607129385414737/1001610824294596638/visa.png
             ">
             </v-img>
           </v-col>
