@@ -149,12 +149,19 @@
                       class="
                       block"
                     > 
-                      <span v-if="item.addCarts==false">
-                        ADD TO BAG
-                      </span>
-                      <span v-if="item.addCarts==true">
-                        ADDED
-                      </span>
+                      <div v-if="item.each == 0">
+                          <span>
+                            OUT OF STOCK
+                          </span>
+                        </div>
+                        <div v-else>
+                          <span v-if="item.addCarts==false">
+                            ADD TO BAG
+                          </span>
+                          <span v-if="item.addCarts==true">
+                            ADDED
+                          </span>
+                        </div>
                     </v-btn>
                 </v-row>
               </div>
