@@ -3,16 +3,18 @@
     <v-row no-gutters 
       class="tw-bg-[#f4f4f4]
       tw-px-12
-      tw-py-16
+      tw-py-8
       "
     >
       <v-col cols="12">
         <v-row no-gutters>
-          <v-col cols="4" 
+          <v-col cols="6" 
             class="
             tw-space-y-2
+            d-flex justify-center
             "
           >
+            <div>
             <v-row no-gutters>
               <v-col cols="12" 
                 class="
@@ -57,12 +59,16 @@
                 </router-link>
               </v-col>
             </v-row>
+            </div>
           </v-col>
-          <v-col cols="4" 
+          <v-col cols="6" 
             class="
               tw-space-y-2
+              d-flex justify-center 
+              tw-border-l-2
             "
           >
+            <div class=" ">
             <v-row no-gutters>
               <v-col cols="12" 
                 class="
@@ -80,6 +86,7 @@
                 </router-link>
               </v-col>
             </v-row>
+            </div>
             <!-- <v-row no-gutters>
               <v-col cols="12">Payment</v-col>
             </v-row>
@@ -90,7 +97,8 @@
               <v-col cols="12">FAQs</v-col>
             </v-row> -->
           </v-col>
-          <v-col cols="4" 
+<!-- keep in tounch ----------------------------------------------------------------------------------------------------->
+          <!-- <v-col cols="4" 
             class="
               tw-space-y-2
             "
@@ -182,7 +190,7 @@
                 </v-row>
               </v-col>
             </v-row>
-          </v-col>
+          </v-col> -->
         </v-row>
       </v-col>
     </v-row>
