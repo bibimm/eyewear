@@ -96,6 +96,7 @@
                       product
                     </button> -->
                     <v-btn
+                      @click.stop="addedProdDialog = true" 
                       @click="addedProduct()"
                       type="button"
                       block
@@ -106,7 +107,6 @@
                       
                     > 
                       ADD PRODUCT
-                      {{name}}
                       <!-- <span v-if="store.addProducts==false">
                         ADD PRODUCT
                       </span>
@@ -541,6 +541,86 @@
   </v-container>
 
   <v-dialog
+    v-model="addedProdDialog"
+    max-width="290"
+  >
+    <div class="
+      tw-bg-white
+      tw-p-4
+      tw-pt-8
+      tw-w-96
+      tw-rounded-lg
+    ">
+      <div 
+        class="
+        d-flex
+        align-center 
+        justify-center"
+      >
+        <div
+          class="
+          tw-w-20
+          "
+        >
+          <v-img
+            :width="100"
+            src="https://cdn.discordapp.com/attachments/1001607129385414737/1001701882592506036/addedProd.png"
+          >
+          </v-img>
+        </div>
+      </div>
+      <v-row no-gutters
+        class="
+        d-flex  
+        align-center 
+        justify-center
+        tw-text-xl
+        tw-pt-4
+        tw-pb-3
+        tw-font-medium
+      ">
+        This product has been added.
+      </v-row>
+      <v-row no-gutters
+        class="
+        d-flex  
+        align-center 
+        justify-center
+        tw-py-0
+        "
+      >
+        You can check this product at the 
+      </v-row>
+      <v-row no-gutters
+        class="
+        d-flex  
+        align-center 
+        justify-center
+        tw-pb-4
+        "
+      >
+        bottom of this page.
+      </v-row>
+      <v-row no-gutters
+        class="
+        d-flex  
+        align-center 
+        justify-end
+        "
+      >
+        <v-btn 
+          color="#cdb972"
+          block
+          class="
+          text-white
+          "
+          @click.stop="addedProdDialog = false"
+        >OK</v-btn>
+      </v-row>
+    </div>
+  </v-dialog>
+
+  <v-dialog
     v-model="deleteDialog"
     max-width="290"
   >
@@ -777,7 +857,7 @@
 
 
   const addedProduct = () => {
-    store.pushData({ name: name, price: price, each: each, image: image, category: category})
+    store.pushData({ name: name, price: price, each: each, image: image, category: category, addCarts: false})
     store.updateProduct()
   }
 
@@ -830,6 +910,13 @@
     })
     return showProducts.value = filter
   }
+
+  const addedProdDialog = ref(false);
+
+
+  // const addedProdDialog = () => {
+
+  // }
 
   // const indexDelete = computed(() => test);
 
