@@ -353,30 +353,31 @@
   
 ">
   <router-link to="product">
+    <!-- color="#c24e2b" -->
 
-  <v-btn
-   rounded="pill"
-   plain
-   color="#c24e2b"
-    class="
-      tw-text-2xl
-      text-white
-    "
-  >
-    GO SHOPPING
-    <div
+    <v-btn
+    rounded="pill"
+    plain
+    color="#ffa8bb"
       class="
-        tw-pl-2
+        tw-text-2xl
+        text-white
       "
-    >
-      <v-img
-        src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607747806175383/arrow3.png"
-        :width="30"
+    >find your style
+      
+      <div
+        class="
+          tw-pl-2
+        "
       >
-      </v-img>
-    </div>
-    
-  </v-btn>
+        <v-img
+          src="https://cdn.discordapp.com/attachments/1001607129385414737/1001607747806175383/arrow3.png"
+          :width="30"
+        >
+        </v-img>
+      </div>
+      
+    </v-btn>
   </router-link>
 </v-row>
 <!-- GO SHOPPING  ----------------------------------------------------------------------------------->

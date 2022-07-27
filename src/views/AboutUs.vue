@@ -67,7 +67,7 @@
                   "
                 >
                   <v-row no-gutters>
-                    I'm a Junior Computer Science Student
+                    I'm a Sophomore Computer Science Student
                   </v-row>
                   <v-row no-gutters>
                     in the Faculty of Science, KMITL

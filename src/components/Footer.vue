@@ -24,28 +24,36 @@
             <v-row no-gutters>
               <v-col cols="12">
                 <router-link to="/product">
-                  All Product
+                  <span class="hover:tw-underline tw-underline-offset-4">
+                    All Product
+                  </span>
                 </router-link>
               </v-col>
             </v-row>
             <v-row no-gutters>
-              <v-col cols="12">
+              <v-col cols="12" >
                 <router-link to="/eyeglasses">
-                  Eyeglasses
+                  <span class="hover:tw-underline tw-underline-offset-4">
+                    Eyeglasses
+                  </span>
                 </router-link>
               </v-col>
             </v-row>
             <v-row no-gutters>
               <v-col cols="12">
                 <router-link to="/sunglasses">
-                  Sunglasses
+                  <span class="hover:tw-underline tw-underline-offset-4">
+                    Sunglasses
+                  </span>
                 </router-link>
               </v-col>
             </v-row>
             <v-row no-gutters>
               <v-col cols="12">
                 <router-link to="/accesories">
-                  Accesories
+                  <span class="hover:tw-underline tw-underline-offset-4">
+                    Accesories
+                  </span>
                 </router-link>
               </v-col>
             </v-row>
@@ -66,7 +74,9 @@
             <v-row no-gutters>
               <v-col cols="12">
                 <router-link to="/aboutus">
-                  About Us
+                  <span class="hover:tw-underline tw-underline-offset-4">
+                    About Us
+                  </span>
                 </router-link>
               </v-col>
             </v-row>
