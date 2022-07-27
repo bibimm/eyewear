@@ -188,7 +188,7 @@
     </v-row>
     <v-row no-gutters 
       class="
-      tw-px-20
+      tw-px-12
       tw-py-1
       tw-bg-[#e0e0e0]
     ">
